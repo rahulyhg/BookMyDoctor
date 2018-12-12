@@ -110,7 +110,7 @@ namespace BookMyDoctor.Repository
                 sqlCmd.ExecuteNonQuery();
                 return true;
             }
-            catch (MySqlException )
+            catch (MySqlException)
             {
                 //throw exc;
                 return false;

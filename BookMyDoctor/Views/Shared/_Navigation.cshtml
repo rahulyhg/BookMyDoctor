@@ -57,7 +57,16 @@
 
                 </ul>
             </li>
-            
+
+            <li class="@Html.IsSelected(controller: "Bookings")">
+                <a href="@Url.Action("Bookings", "Bookings")"><i class="fa fa-envelope"></i> <span class="nav-label" data-i18n="nav.Bookings">Message Centre</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Bookings", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("NewCustomerRegistration", "Bookings")">Enquiries</a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Send Notifications</a></li>                   
+
+                </ul>
+            </li>
+
             <li class="@Html.IsSelected(controller: "Bookings")">
                 <a href="@Url.Action("Bookings", "Bookings")"><i class="fa fa-user-o"></i> <span class="nav-label" data-i18n="nav.Bookings">App Users</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Bookings", cssClass: "in")">
@@ -70,7 +79,7 @@
             <li class="@Html.IsSelected(controller: "Bookings")">
                 <a href="@Url.Action("Bookings", "Bookings")"><i class="fa fa-user-md"></i> <span class="nav-label" data-i18n="nav.Bookings">Doctors</span> <span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Bookings", cssClass: "in")">
-                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("NewCustomerRegistration", "Bookings")">Add New Doctor </a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("Doctor_Registration", "Doctor")">Add New Doctor </a></li>
                     <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Manage Doctors</a></li>
 
                 </ul>
@@ -106,11 +115,11 @@
                 </ul>
             </li>
 
-            
-            @*<li class="@Html.IsSelected(controller: "Index")">
-                <a href="@Url.Action("Index","Home")"><i class="fa fa-star"></i> <span class="nav-label" data-i18n="nav.dashboard">Bookings</span> </a>
 
-            </li>*@
+            @*<li class="@Html.IsSelected(controller: "Index")">
+            <a href="@Url.Action("Index","Home")"><i class="fa fa-star"></i> <span class="nav-label" data-i18n="nav.dashboard">Bookings</span> </a>
+
+        </li>*@
 
 
 
