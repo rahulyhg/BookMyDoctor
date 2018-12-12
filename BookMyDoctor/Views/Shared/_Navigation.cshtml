@@ -6,8 +6,8 @@
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <span class="clear">
                             <span class="block m-t-xs">
-                                <strong class="font-bold">Example user</strong>
-                            </span> <span class="text-muted text-xs block">Example menu <b class="caret"></b></span>
+                                <strong class="font-bold">Vishnudas A</strong>
+                            </span> <span class="text-muted text-xs block">Admin User <b class="caret"></b></span>
                         </span>
                     </a>
                     <ul class="dropdown-menu animated fadeInRight m-t-xs">
@@ -18,12 +18,102 @@
                     IN+
                 </div>
             </li>
-            <li class="@Html.IsSelected(action: "Index")">
-                <a href="@Url.Action("Index", "Home")"><i class="fa fa-laptop"></i> <span class="nav-label">Main page</span> </a>
+            @*<li class="@Html.IsSelected(action: "Index")">
+            <a href="@Url.Action("Index", "Home")"><i class="fa fa-laptop"></i> <span class="nav-label">Dashboard</span> </a>
+        </li>
+        <li class="@Html.IsSelected(action: "Bookings")">
+            <a href="@Url.Action("Index", "Bookings")"><i class="fa fa-pencil"></i> <span class="nav-label">Bookings</span> </a>
+        </li>
+        <li class="@Html.IsSelected(action: "TimeTables")">
+            <a href="@Url.Action("Index", "TimeTables")"><i class="fa fa-laptop"></i> <span class="nav-label">Time Tables</span> </a>
+        </li>
+        <li class="@Html.IsSelected(action: "Doctors")">
+            <a href="@Url.Action("Index", "Doctors")"><i class="fa fa-laptop"></i> <span class="nav-label">Doctors</span> </a>
+        </li>
+        <li class="@Html.IsSelected(action: "Departments")">
+            <a href="@Url.Action("Index", "Departments")"><i class="fa fa-laptop"></i> <span class="nav-label">Departments</span> </a>
+        </li>*@
+
+            <li class="@Html.IsSelected(controller: "Index")">
+                <a href="@Url.Action("Index","Home")"><i class="fa fa-tachometer"></i> <span class="nav-label" data-i18n="nav.dashboard">Dashboard</span> </a>
+
             </li>
-            <li class="@Html.IsSelected(action: "Minor")">
-                <a href="@Url.Action("Minor", "Home")"><i class="fa fa-desktop"></i> <span class="nav-label">Minor page</span></a>
+
+            <li class="@Html.IsSelected(controller: "Bookings")">
+                <a href="@Url.Action("Bookings", "Bookings")"><i class="fa fa-pencil-square-o"></i> <span class="nav-label" data-i18n="nav.Bookings">Bookings</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Bookings", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("NewCustomerRegistration", "Bookings")">New Booking</a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Manage Bookings</a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Print Booking List</a></li>
+                </ul>
             </li>
+
+            <li class="@Html.IsSelected(controller: "Bookings")">
+                <a href="@Url.Action("Bookings", "Bookings")"><i class="fa fa-calendar-check-o"></i> <span class="nav-label" data-i18n="nav.Bookings">Time Tables</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Bookings", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("NewCustomerRegistration", "Bookings")">New Session</a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Manage Time Tables</a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Print Session Info</a></li>
+
+                </ul>
+            </li>
+            
+            <li class="@Html.IsSelected(controller: "Bookings")">
+                <a href="@Url.Action("Bookings", "Bookings")"><i class="fa fa-user-o"></i> <span class="nav-label" data-i18n="nav.Bookings">App Users</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Bookings", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("NewCustomerRegistration", "Bookings")">New User Registration </a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Manage App Users</a></li>
+
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Bookings")">
+                <a href="@Url.Action("Bookings", "Bookings")"><i class="fa fa-user-md"></i> <span class="nav-label" data-i18n="nav.Bookings">Doctors</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Bookings", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("NewCustomerRegistration", "Bookings")">Add New Doctor </a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Manage Doctors</a></li>
+
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Bookings")">
+                <a href="@Url.Action("Bookings", "Bookings")"><i class="fa fa-hospital-o"></i> <span class="nav-label" data-i18n="nav.Bookings">Departments</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Bookings", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("NewCustomerRegistration", "Bookings")">Add New Department </a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Manage Departments</a></li>
+
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Bookings")">
+                <a href="@Url.Action("Bookings", "Bookings")"><i class="fa fa-file-text-o"></i> <span class="nav-label" data-i18n="nav.Bookings">Reports</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Bookings", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("NewCustomerRegistration", "Bookings")">Booking Reports </a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Doctor Reports</a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Department Reports</a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Patient Reports</a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">App Registrations</a></li>
+
+                </ul>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Bookings")">
+                <a href="@Url.Action("Bookings", "Bookings")"><i class="fa fa-cogs"></i> <span class="nav-label" data-i18n="nav.Bookings">Settings</span> <span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse @Html.IsSelected(controller: "Bookings", cssClass: "in")">
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("NewCustomerRegistration", "Bookings")">Admin Panel Settings </a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">App Settings</a></li>
+                    <li class="@Html.IsSelected(action: "Bookings")"><a href="@Url.Action("CustomerList", "CusBookingstomer")">Manage Users</a></li>
+                </ul>
+            </li>
+
+            
+            @*<li class="@Html.IsSelected(controller: "Index")">
+                <a href="@Url.Action("Index","Home")"><i class="fa fa-star"></i> <span class="nav-label" data-i18n="nav.dashboard">Bookings</span> </a>
+
+            </li>*@
+
+
+
         </ul>
     </div>
 </nav>
