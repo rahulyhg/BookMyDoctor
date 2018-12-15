@@ -16,10 +16,10 @@ namespace BookMyDoctor.Helpers
             page = pageName;
             //fl = new FileStream(APP_PATH+"\\log\\log_" + pageName + ".txt", FileMode.OpenOrCreate, FileAccess.ReadWrite);
             DateTime curDate = DateTime.Now;
-            File.AppendAllText(APP_PATH + "\\log\\log_" + page + ".txt", Environment.NewLine + "=======================================================================================" + Environment.NewLine);
+            File.AppendAllText(APP_PATH + "\\ErrorLogs\\log_" + page + ".txt", Environment.NewLine + "=======================================================================================" + Environment.NewLine);
             string date = curDate.ToString("yyyy-MM-dd HH:mm:ss:ffff");
             string writeString = date + Environment.NewLine + "-------------------------------" + Environment.NewLine;
-            File.AppendAllText(APP_PATH + "\\log\\log_" + page + ".txt", writeString);
+            File.AppendAllText(APP_PATH + "\\ErrorLogs\\log_" + page + ".txt", writeString);
         }
 
         ~LogClass()
@@ -32,7 +32,7 @@ namespace BookMyDoctor.Helpers
             //Byte[] btAr = Encoding.Default.GetBytes(logMsg+"\n");
             //fl.Write(btAr, 0, btAr.Length);
             string APP_PATH = System.Web.HttpContext.Current.Server.MapPath("~");
-            string file = APP_PATH + "\\log\\log_" + page + ".txt";
+            string file = APP_PATH + "\\ErrorLogs\\log_" + page + ".txt";
             File.AppendAllText(file, "StackTrace:");
             File.AppendAllText(file, ex.StackTrace + Environment.NewLine);
             File.AppendAllText(file, Environment.NewLine + "-------------------------------" + Environment.NewLine);
@@ -53,7 +53,7 @@ namespace BookMyDoctor.Helpers
             //Byte[] btAr = Encoding.Default.GetBytes(logMsg+"\n");
             //fl.Write(btAr, 0, btAr.Length);
             string APP_PATH = System.Web.HttpContext.Current.Server.MapPath("~");
-            string file = APP_PATH + "\\log\\log_" + page + ".txt";
+            string file = APP_PATH + "\\ErrorLogs\\log_" + page + ".txt";
             File.AppendAllText(file, "DATA:");
             File.AppendAllText(file, sync_data + Environment.NewLine);
 

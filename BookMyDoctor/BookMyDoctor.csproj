@@ -184,6 +184,7 @@
     <Compile Include="Models\Doctor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DoctorDBHandle.cs" />
+    <Compile Include="Repository\MySQL_DB_Connect.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\animate.css" />
