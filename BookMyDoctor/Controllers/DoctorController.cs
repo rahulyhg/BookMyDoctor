@@ -37,7 +37,7 @@ namespace BookMyDoctor.Controllers
                 }
                 return View();
             }
-            catch
+            catch (Exception ex)
             {
                 return View();
             }
